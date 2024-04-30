@@ -10,10 +10,10 @@ jobs:
     
 # 3. source checkout
     steps:
-      - name: Source Checkout
-        uses: actions/checkout@v2
+    - name: Source Checkout
+      uses: actions/checkout@v2
 # 4. setup node
-      - name: Node.js 설치
+    - name: Node.js 설치
       uses: actions/setup-node@v2  # Node.js 설정 액션 사용
       with:
         node-version: 'latest'  # 사용할 Node.js 버전 지정
