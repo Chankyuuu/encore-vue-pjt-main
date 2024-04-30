@@ -18,7 +18,9 @@ jobs:
       with:
         node-version: '20.12.1'  # 사용할 Node.js 버전 지정
 # 5. docker build
-
+    - name: 빌드
+      run: npm install
+      run: npm run build
 # 6. docker login
 
 # 7. docker build and push
