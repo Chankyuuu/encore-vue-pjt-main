@@ -26,9 +26,18 @@ jobs:
       with:
         username: ${{secrets.DOCKERHUB_USERNAME}}
         password: ${{secrets.DOCKERHUB_TOKEN}}
-        
+
 # 7. docker build and push
-    
+    - name: Push Image
+      uses: docker/build-push-action@v2
+      with:
+        context: ./
+        # Dockerfile이 있는 위치입니다.
+        file: ./Dockerfile
+        # Dockerfile의 경로입니다.
+        push: true
+        # 이미지를 레지스트리에 푸시합니다.
+        tags: ${{ secrets.DOCKERHUB_USERNAME }}/vuefront:${{ github.sha }}
 # 파이프라인 작성이 끝나면 로컬 콘솔에서 이미지 빌드 , 실행
 # docker build ~~~~
 # docker run port(8080:8080) container_name
