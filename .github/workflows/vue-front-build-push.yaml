@@ -16,7 +16,7 @@ jobs:
     - name: Node.js 설치
       uses: actions/setup-node@v2  # Node.js 설정 액션 사용
       with:
-        node-version: 'latest'  # 사용할 Node.js 버전 지정
+        node-version: '20.12.1'  # 사용할 Node.js 버전 지정
 # 5. docker build
 
 # 6. docker login
